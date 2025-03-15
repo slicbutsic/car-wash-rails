@@ -2,9 +2,10 @@
 
 # Delete all existing data
 User.destroy_all
-Service.destroy_all
 VehicleType.destroy_all
 Price.destroy_all
+Booking.destroy_all
+Service.destroy_all
 
 # Create Users (one user for testing)
 user = User.create!(

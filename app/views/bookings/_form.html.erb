@@ -1,0 +1,27 @@
+<h1>Book Service: <%= @service.name %></h1>
+<%= form_with model: @booking, local: true do |form| %>
+  <div class="mb-4">
+    <%= form.label :vehicle_type_id %>
+    <%= form.collection_select :vehicle_type_id, VehicleType.all, :id, :name, prompt: "Select Vehicle Type", class: "border p-2 w-full", required: true %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :booking_date, "Booking Date" %>
+    <%= form.date_field :booking_date, class: "border p-2 w-full", required: true %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :booking_time, "Booking Time" %>
+    <%= form.time_field :booking_time, class: "border p-2 w-full", required: true %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :phone %>
+    <%= form.text_field :phone, class: "border p-2 w-full", required: true %>
+  </div>
+
+  <%= form.hidden_field :service_id, value: @service.id %>
+  <div class="mb-4">
+    <%= form.submit "Book Now", class: "bg-blue-500 text-white px-4 py-2 rounded-lg" %>
+  </div>
+<% end %>
