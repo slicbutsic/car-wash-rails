@@ -4,3 +4,8 @@ import "controllers"
 
 
 
+import { Application } from "@hotwired/stimulus";
+import FlatpickrController from "./controllers/flatpickr_controller.js";
+
+const application = Application.start();
+application.register("flatpickr", FlatpickrController);

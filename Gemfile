@@ -74,3 +74,4 @@ gem "tailwindcss-rails", "~> 4.2"
 
 gem 'devise'
 
+gem 'flatpickr'

@@ -2,3 +2,7 @@
 import { application } from "controllers/application"
 import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
 eagerLoadControllersFrom("controllers", application)
+
+import FlatpickrController from "controllers/flatpickr_controller"
+
+application.register("flatpickr", FlatpickrController)
