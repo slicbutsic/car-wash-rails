@@ -1,64 +1,36 @@
-// import { Controller } from "@hotwired/stimulus"
-
-// // Connects to data-controller="flatpickr"
-// export default class extends Controller {
-//   connect() {
-//     // console.log("connected", this.element);
-
-//     flatpickr('.booking_date', {
-//       dateFormat: "d-m-Y",
-//       minDate: "today",
-//     });
-
-//     flatpickr('.booking_time', {
-//       enableTime: true,
-//       noCalendar: true,
-//       dateFormat: "H:i",
-//       time_24hr: true,
-//       minuteIncrement: 30,
-//     });
-//   }
-// }
-
 import { Controller } from "@hotwired/stimulus"
 // import flatpickr from "flatpickr"
 
 export default class extends Controller {
   connect() {
     this.initDatePicker()
-    this.initTimePicker()
   }
 
   initDatePicker() {
+    // Get current Brisbane time
+    const brisbaneDate = new Date().toLocaleString("en-US", {
+      timeZone: "Australia/Brisbane"
+    })
+    const now = new Date(brisbaneDate)
+
+    // Calculate minimum date
+    const minDate = this.isPastCutoff(now) ? this.getTomorrow(now) : now
+
     flatpickr('.booking_date', {
       dateFormat: "d-m-Y",
-      minDate: "today",
-      allowInput: true,
-      onClose: (selectedDates, dateStr, instance) => {
-        if (dateStr) {
-          instance.input.classList.remove('error')
-        } else {
-          instance.input.classList.add('error')
-        }
-      }
-    });
+      minDate: minDate,
+      allowInput: true
+    })
   }
 
-  initTimePicker() {
-    flatpickr('.booking_time', {
-      enableTime: true,
-      noCalendar: true,
-      dateFormat: "H:i",
-      time_24hr: true,
-      minuteIncrement: 30,
-      allowInput: true,
-      onClose: (selectedDates, dateStr, instance) => {
-        if (dateStr) {
-          instance.input.classList.remove('error')
-        } else {
-          instance.input.classList.add('error')
-        }
-      }
-    });
+  isPastCutoff(date) {
+    return date.getHours() >= 17 // 5 PM Brisbane time
+  }
+
+  getTomorrow(date) {
+    const tomorrow = new Date(date)
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    tomorrow.setHours(0, 0, 0, 0) // Reset to midnight
+    return tomorrow
   }
 }
