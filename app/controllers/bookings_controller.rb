@@ -5,40 +5,48 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def new
-    @service = Service.find(params[:service_id])
-    @booking = Booking.new
+  # def new
+  #   @service = Service.find(params[:service_id])
+  #   @booking = Booking.new
 
-    @vehicle_types = VehicleType.all
-  end
-
-  def create
-    @service = Service.find(params[:booking][:service_id])
-    @booking = @service.bookings.new(booking_params)
-    if @booking.save
-      redirect_to booking_path(@booking), notice: "Booking successfully created!"
-    else
-      render :new
-    end
-  end
-
+  #   @vehicle_types = VehicleType.all
+  # end
 
   # def create
   #   @service = Service.find(params[:booking][:service_id])
-  #   @vehicle_type = VehicleType.find(params[:booking][:vehicle_type_id])
-
-  #   # Find the price based on the service and vehicle type
-  #   @price = Price.find_by(service: @service, vehicle_type: @vehicle_type)
-
   #   @booking = @service.bookings.new(booking_params)
-  #   @booking.price = @price.price # Set the price to the booking
-
   #   if @booking.save
   #     redirect_to booking_path(@booking), notice: "Booking successfully created!"
   #   else
   #     render :new
   #   end
   # end
+
+
+  def new
+    @booking = Booking.new
+    @service = Service.find(params[:service_id])
+    @vehicle_types = VehicleType.all
+    @price = nil
+  end
+
+  def create
+    @service = Service.find(params[:booking][:service_id])
+    @vehicle_type = VehicleType.find(params[:booking][:vehicle_type_id])
+    @price = Price.find_by(service_id: @service.id, vehicle_type_id: @vehicle_type.id)
+
+    @booking = @service.bookings.new(booking_params)
+    @booking.price_id = @price.id if @price
+
+    if @booking.save
+      redirect_to booking_path(@booking), notice: "Booking successfully created!"
+    else
+      @vehicle_types = VehicleType.all
+      render :new
+    end
+  end
+
+
 
   private
 
