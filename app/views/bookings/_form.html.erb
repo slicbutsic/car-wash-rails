@@ -1,13 +1,8 @@
 <%= form_with model: @booking, url: bookings_path, method: :post, local: true do |f| %>
 
-
-
   <%= f.hidden_field :service_id,
        value: @service.id,
        data: { duration: @service.duration } %>
-
-
-
 
 
   Duration: <%= @service.duration %> minutes
@@ -82,27 +77,17 @@
       </div>
   </div>
 
-  <!-- Booking Date with Flatpickr -->
+  <!-- Booking Date & time Flatpickr -->
   <div class="mb-4">
-    <%= f.label :booking_date, "Day" %>
-    <%= f.text_field :booking_date, class: "border p-2 w-full rounded-xl booking_date", required: true, data: { controller: "flatpickr" }, autocomplete: "off"  %>
-  </div>
-
-  <!-- Booking Time with Flatpickr -->
-  <%# <div class="mb-4"> %>
-    <%#= f.label :booking_time, "Time" %>
-    <%#= f.text_field :booking_time, class: "border p-2 w-full rounded-xl booking_time", required: true, data: { controller: "flatpickr" }, autocomplete: "off"  %>
-  <%# </div> %>
-
-  <div class="mb-4">
-    <%= f.label :booking_time, "Time" %>
-    <%= f.select :booking_time,
-                time_options(@service.duration),
-                { prompt: "Select time" },
-                {
-                  class: "border p-2 w-full rounded-xl",
-                  required: true
-                } %>
+    <%= f.text_field :booking_datetime,
+                    class: "border p-2 w-full rounded-xl",
+                    required: true,
+                    data: {
+                      controller: "flatpickr",
+                      flatpickr_duration_value: @service.duration
+                    },
+                    autocomplete: "off"
+    %>
   </div>
 
   <!-- Phone Number -->

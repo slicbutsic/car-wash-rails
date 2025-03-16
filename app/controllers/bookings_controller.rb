@@ -47,7 +47,7 @@ class BookingsController < ApplicationController
     @service = Service.find(params[:service_id])
     @vehicle_types = VehicleType.all
 
- 
+
 
     # If a vehicle type is selected, calculate the price
     if params[:booking] && params[:booking][:vehicle_type_id].present?
@@ -79,6 +79,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:phone, :service_id, :vehicle_type_id, :booking_date, :booking_time).merge(user_id: current_user.id)
+    params.require(:booking).permit(:phone, :service_id, :vehicle_type_id, :booking_datetime).merge(user_id: current_user.id)
   end
 end

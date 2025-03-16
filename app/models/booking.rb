@@ -8,7 +8,5 @@ class Booking < ApplicationRecord
   validates :vehicle_type_id, presence: true
   validates :service_id, presence: true
   validates :user_id, presence: true
-  validates :booking_date, presence: true
-  validates :booking_time, presence: true
-
+  validates :booking_datetime, presence: true
 end
