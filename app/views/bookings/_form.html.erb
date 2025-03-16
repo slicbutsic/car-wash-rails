@@ -1,39 +1,96 @@
 <%= form_with model: @booking, url: bookings_path, method: :post, local: true do |f| %>
   <%= f.hidden_field :service_id, value: @service.id %>
+  <div class="mb-4 mt-10">
+    <%= f.label :vehicle_type_id, "What are we washing today?" %>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5">
+      <!-- Sedan -->
+      <div class="flex flex-col items-center mt-5">
+        <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Hatchback & Sedan").id, id: "vehicle_sedan", class: "hidden peer", required: true %>
+        <label for="vehicle_sedan" class="w-50 h-40 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-indigo-50 transition peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500">
+          <!-- Icon on top -->
+          <img width="50" height="50" src="https://img.icons8.com/ios/100/sedan.png" alt="sedan" />
+          <!-- Text below the icon -->
+          <span class="mt-2 text-center text-md peer-checked:text-red-500 peer-hover:text-blue-500">
+            Hatchback or Sedan <br>
+            <% @service.name %>
+            <% @vehicle_type = VehicleType.find_by(name: "Hatchback & Sedan") %>
+            <% @vehicle_type.name %>
+            <% @price = Price.find_by(service_id: @service.id, vehicle_type_id: @vehicle_type.id) %>
+            <%= @price ? "$#{@price.price}" : "Price not available" %>
+          </span>
+        </label>
+      </div>
 
-  <!-- Vehicle Type Selection -->
-  <div class="mb-4">
-    <%= f.label :vehicle_type_id, "Select Vehicle Type" %>
-    <%= f.select :vehicle_type_id, @vehicle_types.collect { |v| [v.name, v.id] }, { include_blank: true }, { id: "vehicle_type_select", onchange: "this.form.submit();" } %>
+      <!-- SUV -->
+      <div class="flex flex-col items-center mt-5">
+        <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Wagon & MidSize SUV").id, id: "vehicle_suv", class: "hidden peer", required: true, onchange: "this.form.submit()" %>
+        <label for="vehicle_suv" class="w-50 h-40 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-indigo-50 transition peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500">
+          <!-- Icon on top -->
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/suv.png" alt="suv" />
+          <!-- Text below the icon -->
+          <span class="mt-2 text-center text-md peer-checked:text-red-500 peer-hover:text-blue-500">
+            Wagon or MidSize SUV <br>
+            <% @vehicle_type = VehicleType.find_by(name: "Wagon & MidSize SUV") %>
+            <% @price = Price.find_by(service_id: @service.id, vehicle_type_id: @vehicle_type.id) %>
+            <%= @price ? "$#{@price.price}" : "Price not available" %>
+          </span>
+        </label>
+      </div>
+
+      <!-- Ute -->
+      <div class="flex flex-col items-center mt-5">
+        <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Large SUV & UTE").id, id: "vehicle_ute", class: "hidden peer", required: true, onchange: "this.form.submit()" %>
+        <label for="vehicle_ute" class="w-50 h-40 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-indigo-50 transition peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500">
+          <!-- Icon on top -->
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/pickup.png" alt="pickup" class='mb-4' />
+          <!-- Text below the icon -->
+          <span class="mt-2 text-center text-md peer-checked:text-red-500 peer-hover:text-blue-500">
+            Large SUV or UTE <br>
+            <% @vehicle_type = VehicleType.find_by(name: "Large SUV & UTE") %>
+            <% @price = Price.find_by(service_id: @service.id, vehicle_type_id: @vehicle_type.id) %>
+            <%= @price ? "$#{@price.price}" : "Price not available" %>
+          </span>
+        </label>
+      </div>
+
+      <!-- Van -->
+      <div class="flex flex-col items-center mt-5">
+        <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Extra Large SUV & Van").id, id: "vehicle_van", class: "hidden peer", required: true, onchange: "this.form.submit()" %>
+        <label for="vehicle_van" class="w-50 h-40 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-indigo-50 transition peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500">
+          <!-- Icon on top -->
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/van.png" alt="van" class='mt-4' />
+          <!-- Text below the icon -->
+          <span class="mt-2 text-center text-md peer-checked:text-red-500 peer-hover:text-blue-500">
+            Extra Large SUV or Van <br>
+            <% @vehicle_type = VehicleType.find_by(name: "Extra Large SUV & Van") %>
+            <% @price = Price.find_by(service_id: @service.id, vehicle_type_id: @vehicle_type.id) %>
+            <%= @price ? "$#{@price.price}" : "Price not available" %>
+          </span>
+        </label>
+      </div>
   </div>
 
-  <!-- Display the price if a vehicle type is selected -->
-  <% if @price %>
-    <p id="price_display">Price: $<%= @price.price %></p>
-  <% else %>
-    <p id="price_display">Select a vehicle type to see the price.</p>
-  <% end %>
 
   <!-- Booking Date with Flatpickr -->
   <div class="mb-4">
     <%= f.label :booking_date, "Booking Date" %>
-    <%= f.text_field :booking_date, class: "border p-2 w-full booking_date", required: true, data: { controller: "flatpickr" } %>
+    <%= f.text_field :booking_date, class: "border p-2 w-full rounded-xl booking_date", required: true, data: { controller: "flatpickr" }, autocomplete: "off"  %>
   </div>
 
   <!-- Booking Time with Flatpickr -->
   <div class="mb-4">
     <%= f.label :booking_time, "Booking Time" %>
-    <%= f.text_field :booking_time, class: "border p-2 w-full booking_time", required: true, data: { controller: "flatpickr" } %>
+    <%= f.text_field :booking_time, class: "border p-2 w-full rounded-xl booking_time", required: true, data: { controller: "flatpickr" }, autocomplete: "off"  %>
   </div>
 
   <!-- Phone Number -->
   <div class="mb-4">
     <%= f.label :phone %>
-    <%= f.text_field :phone, class: "border p-2 w-full", required: true %>
+    <%= f.text_field :phone, class: "border p-2 w-full rounded-xl", required: true, pattern: "^04[0-9]{8}$", placeholder: "0406345609", autocomplete: "off"  %>
   </div>
 
   <!-- Submit Button -->
   <div class="mb-4">
-    <%= f.submit "Make Booking", class: "bg-blue-500 text-white px-4 py-2 rounded-lg" %>
+    <%= f.submit "Make Booking", class: "bg-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer" %>
   </div>
 <% end %>

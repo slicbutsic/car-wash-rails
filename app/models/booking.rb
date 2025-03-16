@@ -10,4 +10,5 @@ class Booking < ApplicationRecord
   validates :user_id, presence: true
   validates :booking_date, presence: true
   validates :booking_time, presence: true
+
 end
