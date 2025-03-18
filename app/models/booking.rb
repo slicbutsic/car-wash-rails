@@ -9,4 +9,17 @@ class Booking < ApplicationRecord
   validates :service_id, presence: true
   validates :user_id, presence: true
   validates :booking_datetime, presence: true
+
+  after_create :send_notifications
+
+  private
+
+  def send_notifications
+    # Send confirmation email to the user
+    BookingMailer.booking_confirmation(self).deliver_later
+
+    # Send notification email to the admin
+    BookingMailer.admin_notification(self).deliver_later
+  end
+
 end

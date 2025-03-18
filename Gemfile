@@ -76,3 +76,5 @@ gem 'devise'
 
 gem 'flatpickr'
 
+gem 'dotenv-rails'
+

@@ -11,7 +11,7 @@ Service.destroy_all
 user = User.create!(
   first_name: "Lucas",
   last_name: "Siviglia",
-  email: "sivluc@gmail.com",
+  email: "siviglialucas@gmail.com",
   password: "password",
   password_confirmation: "password"
 )
