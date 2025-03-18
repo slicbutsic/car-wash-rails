@@ -1,15 +1,18 @@
-<h2>Booking Confirmation</h2>
+<div class="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
+  <h2 class="text-2xl font-bold text-gray-800 mb-4">Booking Confirmation</h2>
 
-<p>Hi <%= @booking.user.first_name %>,</p>
+  <p class="text-gray-700">Hi <%= @booking.user.first_name %>,</p>
 
-<p>Thank you for your booking! Here are your booking details:</p>
+  <p class="text-gray-700 mt-2">Thank you for your booking! Here are your booking details:</p>
 
-<ul>
-  <li><strong>Service:</strong> <%= @booking.service.name %></li>
-  <li><strong>Vehicle Type:</strong> <%= @booking.vehicle_type.name %></li>
-</ul>
+  <ul class="mt-4 space-y-2">
+    <li class="text-gray-700"><strong class="font-semibold">Service:</strong> <%= @booking.service.name %></li>
+    <li class="text-gray-700"><strong class="font-semibold">Vehicle Type:</strong> <%= @booking.vehicle_type.name %></li>
+    <li class="text-gray-700"><strong class="font-semibold">Time:</strong> <%= @booking.booking_datetime.strftime('%d/%m/%Y %I:%M %p') %></li>
+  </ul>
 
-<p>If you have any questions, feel free to contact us.</p>
+  <p class="text-gray-700 mt-4">If you have any questions, feel free to contact us.</p>
 
-<p>Best regards,<br>
-Limco Carwash</p>
+  <p class="text-gray-700 mt-6">Best regards,<br>
+  <span class="font-semibold">Limco Carwash</span></p>
+</div>

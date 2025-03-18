@@ -1,11 +1,10 @@
 <h2>New Booking Created</h2>
 
-<p>A new booking has been created. Here are the details:</p>
-
 <ul>
-  <li><strong>User:</strong> <%= @booking.user.first_name %> (<%= @booking.user.email %>)</li>
+  <li><strong>Client:</strong> <%= @booking.user.first_name %> (<%= @booking.user.email %>)</li>
   <li><strong>Service:</strong> <%= @booking.service.name %></li>
   <li><strong>Vehicle Type:</strong> <%= @booking.vehicle_type.name %></li>
+  <li><strong>Time:</strong> <%= @booking.booking_datetime.strftime('%d/%m/%Y %I:%M %p') %></li>
 </ul>
 
 <p>Please make sure everything is ready for this booking.</p>
