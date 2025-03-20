@@ -17,10 +17,10 @@ user = User.create!(
 )
 
 # Create Services
-basic_outside_wash = Service.create!(name: 'Basic Outside Wash', duration: 25)
-basic_inside_out_detailing = Service.create!(name: 'Basic Inside/Out Detailing', duration: 55)
-mega_wash = Service.create!(name: 'Mega Wash', duration: 75)
-full_detailing = Service.create!(name: 'Full Detailing', duration: 150)
+basic_outside_wash = Service.create!(name: 'Basic Outside Wash', description:'A quick exterior wash of your car’s body, windows, wheels, and tire shine. Perfect for regular upkeep and maintenance, keeping your vehicle looking fresh.', duration: 25)
+basic_inside_out_detailing = Service.create!(name: 'Basic Inside/Out Detailing', description: 'Includes an exterior wash and interior vacuuming, dusting, and wipe-downs. A complete clean for both inside and outside of your vehicle.', duration: 55)
+mega_wash = Service.create!(name: 'Mega Wash', description: 'A deep exterior wash, tire and rim cleaning, plus a thorough wipe-down of all surfaces. The ultimate cleaning experience for a pristine appearance.', duration: 75)
+full_detailing = Service.create!(name: 'Full Detailing', description: 'Complete exterior wash, waxing, interior deep cleaning, and upholstery treatment. A meticulous clean that leaves your car spotless inside and out.', duration: 150)
 
 # Create Vehicle Types
 vehicle_types = [

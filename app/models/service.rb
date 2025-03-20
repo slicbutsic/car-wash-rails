@@ -6,6 +6,9 @@ class Service < ApplicationRecord
   validates :name, presence: true
   validates :duration, presence: true
 
+  def cheapest_price
+    prices.minimum(:price)
+  end
 
   def formatted_duration
     if duration.present?
