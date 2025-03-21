@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   # Resources for services
   resources :services
+  resources :contacts, only: [:index]
+  resources :about, only: [:index]
 
   # Resources for bookings
   resources :bookings
