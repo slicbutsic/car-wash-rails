@@ -1,12 +1,9 @@
 <!-- Hero Image Section -->
-<div class="w-full h-screen bg-cover bg-center relative" style="background-image: url('<%= asset_path('car.jpg') %>')">
+<div class="w-full h-screen bg-cover bg-center relative" style="background-image: url('<%= asset_path('bg-dash.jpg') %>')">
   <div class="absolute bottom-10 right-10 text-white text-right">
     <h1 class="text-5xl font-thin">Feel like new again</h1>
   </div>
 </div>
-
-
-
 
 <!-- Introduction Section -->
 <div class="py-12 bg-white">
@@ -46,88 +43,5 @@
         <p class="text-sm text-gray-600">Our friendly staff are always ready to assist you.</p>
       </div>
     </div>
-  </div>
-</div>
-
-
-<!-- Call to Action Section -->
-<div class="py-12 bg-white">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-medium leading-7 text-gray-900 mb-4">Get Started</h2>
-    <p class="text-lg text-gray-600 mb-8">Book your car wash today and experience the difference!</p>
-    <%= link_to "Book Now", new_booking_path, class: "bg-indigo-600 hover:bg-indigo-700 text-white font-light px-9 py-4 rounded-md cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
-  </div>
-</div>
-
-
-<div class="container mx-auto p-6">
-  <!-- Summary Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <div class="bg-blue-500 text-white p-4 rounded-lg shadow-lg">
-      <h5 class="text-lg font-bold">Total Bookings</h5>
-      <p class="text-2xl">Today: 12 | This Month: 120</p>
-    </div>
-    <div class="bg-green-500 text-white p-4 rounded-lg shadow-lg">
-      <h5 class="text-lg font-bold">Revenue</h5>
-      <p class="text-2xl">$5,000 This Month</p>
-    </div>
-    <div class="bg-yellow-500 text-white p-4 rounded-lg shadow-lg">
-      <h5 class="text-lg font-bold">Upcoming Appointments</h5>
-      <p class="text-2xl">5 Scheduled Today</p>
-    </div>
-    <div class="bg-red-500 text-white p-4 rounded-lg shadow-lg">
-      <h5 class="text-lg font-bold">Customer Reviews</h5>
-      <p class="text-2xl">⭐⭐⭐⭐⭐ (4.8/5)</p>
-    </div>
-  </div>
-
-  <!-- Bookings Table -->
-  <div class="mt-6">
-    <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
-      <h3 class="text-xl font-bold">Upcoming Bookings</h3>
-    </div>
-    <table class="mt-4 min-w-full table-auto border-collapse">
-      <thead class="bg-gray-100 text-gray-700">
-        <tr>
-          <th class="px-6 py-2 text-left">Customer</th>
-          <th class="px-6 py-2 text-left">Car Model</th>
-          <th class="px-6 py-2 text-left">Service</th>
-          <th class="px-6 py-2 text-left">Date</th>
-          <th class="px-6 py-2 text-left">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-b">
-          <td class="px-6 py-2">John Doe</td>
-          <td class="px-6 py-2">Toyota Camry</td>
-          <td class="px-6 py-2">Exterior Wash</td>
-          <td class="px-6 py-2">March 21, 2025</td>
-          <td class="px-6 py-2"><span class="bg-green-500 text-white py-1 px-3 rounded-full">Scheduled</span></td>
-        </tr>
-        <tr class="border-b">
-          <td class="px-6 py-2">Jane Smith</td>
-          <td class="px-6 py-2">Honda Civic</td>
-          <td class="px-6 py-2">Interior Wash</td>
-          <td class="px-6 py-2">March 22, 2025</td>
-          <td class="px-6 py-2"><span class="bg-yellow-500 text-white py-1 px-3 rounded-full">Pending</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Google Map -->
-  <div class="mt-6">
-    <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
-      <h3 class="text-xl font-bold">Car Wash Location</h3>
-    </div>
-    <div id="map" class="mt-4 h-64"></div>
-  </div>
-
-  <!-- Revenue Chart -->
-  <div class="mt-6">
-    <div class="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
-      <h3 class="text-xl font-bold">Revenue Chart</h3>
-    </div>
-    <canvas id="revenueChart" class="mt-4"></canvas>
   </div>
 </div>
