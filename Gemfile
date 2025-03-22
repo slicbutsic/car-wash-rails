@@ -78,3 +78,4 @@ gem 'flatpickr'
 
 gem 'dotenv-rails'
 
+gem "mapkick-rb"

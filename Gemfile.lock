@@ -143,6 +143,7 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mapkick-rb (0.2.0)
     marcel (1.0.4)
     matrix (0.4.2)
     mini_mime (1.1.5)
@@ -314,6 +315,7 @@ DEPENDENCIES
   flatpickr
   importmap-rails
   jbuilder
+  mapkick-rb
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
   selenium-webdriver
