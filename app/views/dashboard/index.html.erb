@@ -1,69 +1,8 @@
-<div class="w-full bg-cover bg-center relative" style="background-image: url('<%= asset_path('being-washed.jpg') %>'); opacity: 0.8; height: calc(100vh - 4rem);">
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black opacity-50"></div>
-
-  <!-- Text Content -->
-  <div class="absolute inset-0 flex items-center justify-center text-white text-center z-10">
-    <div>
-      <h1 class="text-4xl font-bold">Want a fresh, clean car?</h1>
-      <p class="text-lg mt-2">North Brisbane's Limco Carwash at your service.</p>
-      <div class="mt-5">
-        <%= link_to "Book Now", services_path, class: "bg-indigo-600 hover:bg-indigo-700 text-white font-light px-4 py-2 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
-      </div>
-    </div>
-  </div>
-</div>
+<%# Hero %>
+<%= render 'hero' %>
 
 <!-- Introduction Section -->
-<div class="py-12 bg-white">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-medium leading-7 text-indigo-800 mb-4">Limco Car Wash Services</h2>
-    <p class="text-lg text-gray-600 mb-8">
-      Whether you're looking for a quick refresh or a premium detailing experience, we offer a range of services designed to meet the needs of every driver. </p>
-  </div>
-</div>
+<%= render 'introduction_section' %>
 
-<!-- Features Section -->
-<div class="py-12 bg-gray-100 w-full">
-  <div class="px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl font-medium leading-7 text-gray-900 mb-4">Our Features</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-      <div class="flex flex-col p-6 ">
-        <%= render 'affordable' %>
-        <h3 class="mb-2 text-lg font-medium text-gray-900">Affordable</h3>
-        <p class="text-sm text-gray-600">We offer competitive pricing to ensure our services fit within your budget, without compromising on quality or service.</p>
-      </div>
-
-      <div class="flex flex-col p-6">
-        <%= render 'experience' %>
-        <h3 class="mb-2 text-lg font-medium text-gray-900">Experience</h3>
-        <p class="text-sm text-gray-600">We have been doing this long enough to know how to achieve the client's needs and wants. Additionally, we’ve picked up a few tips and tricks along the way.</p>
-      </div>
-
-      <div class="flex flex-col p-6">
-        <%= render 'quality' %>
-        <h3 class="mb-2 text-lg font-medium text-gray-900">Quality</h3>
-        <p class="text-sm text-gray-600">We guarantee excellent results with skilled work and high-quality equipment.</p>
-      </div>
-
-      <div class="flex flex-col p-6">
-        <%= render 'reliable' %>
-        <h3 class="mb-2 text-lg font-medium text-gray-900">Reliable</h3>
-        <p class="text-sm text-gray-600">Our dedicated team ensures consistent, high-quality service with every visit.</p>
-      </div>
-
-      <div class="flex flex-col p-6">
-        <%= render 'phone' %>
-        <h3 class="mb-2 text-lg font-medium text-gray-900">Easy Online Booking</h3>
-        <p class="text-sm text-gray-600">Book your car wash in just a few clicks, making it quick and convenient to secure your spot.</p>
-      </div>
-
-      <div class="flex flex-col p-6">
-        <%= render 'friendliness' %>
-        <h3 class="mb-2 text-lg font-medium text-gray-900">Friendliness</h3>
-        <p class="text-sm text-gray-600">With a friendly touch, we ensure each car wash is done to the highest standard, leaving you with a smile every time.</p>
-      </div>
-    </div>
-  </div>
-</div>
+<%# why Limco? %>
+<%= render 'whyLimco' %>
