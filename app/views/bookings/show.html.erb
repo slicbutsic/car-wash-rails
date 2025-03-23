@@ -28,16 +28,16 @@
 
         <div class="row mb-4">
           <div class="col-md-4 font-medium"><strong>Booking Date:</strong></div>
-          <div class="col-md-8"><%= @booking.booking_datetime.strftime("%A, %B %d %Y at %H:%M") %></div>
+          <div class="col-md-8"><%= @booking.booking_datetime.strftime("%A, %d %B %Y at %H:%M") %></div>
         </div>
 
         <div class="row mb-4">
           <div class="col-md-4 font-medium"><strong>Price:</strong></div>
-          <div class="col-md-8 text-lg font-semibold text-green-600">$<%= @booking.price.price %></div>
+          <div class="col-md-8 text-lg font-semibold"><%= number_to_currency(@booking.price.price, precision: 2) %></div>
         </div>
 
         <div class="text-center mt-6">
-          <%= link_to 'Back to Bookings', root_path, class: 'btn bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95' %>
+          <%= link_to 'Go back', root_path, class: 'btn bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95' %>
         </div>
       </div>
     </div>
