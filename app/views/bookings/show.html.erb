@@ -1,42 +1,44 @@
-<div class="container mt-5">
-  <h1 class="text-center mb-4">Booking Details</h1>
+<div class="container mt-5 mb-8">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"> <!-- Container with max width and responsive padding -->
+    <h1 class="text-center text-3xl font-semibold mb-6">Booking Details</h1>
 
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title mb-3">Booking Confirmation</h5>
+    <div class="card shadow-lg border rounded-lg p-6">
+      <div class="card-body">
+        <h5 class="card-title text-xl font-medium mb-4">Booking Confirmation</h5>
 
-      <div class="row mb-2">
-        <div class="col-md-4"><strong>Name:</strong></div>
-        <div class="col-md-8"><%= @booking.user.first_name %> <%= @booking.user.last_name %></div>
-      </div>
+        <div class="row mb-4">
+          <div class="col-md-4 font-medium"><strong>Name:</strong></div>
+          <div class="col-md-8"><%= @booking.user.first_name %> <%= @booking.user.last_name %></div>
+        </div>
 
-      <div class="row mb-2">
-        <div class="col-md-4"><strong>Phone:</strong></div>
-        <div class="col-md-8"><%= @booking.phone %></div>
-      </div>
+        <div class="row mb-4">
+          <div class="col-md-4 font-medium"><strong>Phone:</strong></div>
+          <div class="col-md-8"><%= @booking.phone %></div>
+        </div>
 
-      <div class="row mb-2">
-        <div class="col-md-4"><strong>Vehicle Type:</strong></div>
-        <div class="col-md-8"><%= @booking.vehicle_type.name %></div>
-      </div>
+        <div class="row mb-4">
+          <div class="col-md-4 font-medium"><strong>Vehicle Type:</strong></div>
+          <div class="col-md-8"><%= @booking.vehicle_type.name %></div>
+        </div>
 
-      <div class="row mb-2">
-        <div class="col-md-4"><strong>Service:</strong></div>
-        <div class="col-md-8"><%= @booking.service.name %></div>
-      </div>
+        <div class="row mb-4">
+          <div class="col-md-4 font-medium"><strong>Service:</strong></div>
+          <div class="col-md-8"><%= @booking.service.name %></div>
+        </div>
 
-      <div class="row mb-2">
-        <div class="col-md-4"><strong>Booking Date:</strong></div>
-        <div class="col-md-8"><%= @booking.booking_datetime.strftime("%A, %B %d %Y at %H:%M") %></div>
-      </div>
+        <div class="row mb-4">
+          <div class="col-md-4 font-medium"><strong>Booking Date:</strong></div>
+          <div class="col-md-8"><%= @booking.booking_datetime.strftime("%A, %B %d %Y at %H:%M") %></div>
+        </div>
 
-      <div class="row mb-3">
-        <div class="col-md-4"><strong>Price:</strong></div>
-        <div class="col-md-8 text-success">$<%= @booking.price.price %></div>
-      </div>
+        <div class="row mb-4">
+          <div class="col-md-4 font-medium"><strong>Price:</strong></div>
+          <div class="col-md-8 text-lg font-semibold text-green-600">$<%= @booking.price.price %></div>
+        </div>
 
-      <div class="text-center">
-        <%= link_to 'Back to Bookings', root_path, class: 'btn btn-primary' %>
+        <div class="text-center mt-6">
+          <%= link_to 'Back to Bookings', root_path, class: 'btn bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95' %>
+        </div>
       </div>
     </div>
   </div>
