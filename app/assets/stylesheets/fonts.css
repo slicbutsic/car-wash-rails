@@ -52,7 +52,6 @@
   font-style: normal;
 }
 
-
 /* hero section (view/dashboard/index */
 /* Hide the image on smaller screens */
 .logo-wrapper {
@@ -79,5 +78,4 @@
 .flatpickr-day:hover {
   background: #a5b4fc !important;
   border-color: #a5b4fc !important;
-
 }
