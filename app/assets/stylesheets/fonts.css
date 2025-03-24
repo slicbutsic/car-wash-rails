@@ -79,3 +79,21 @@
   background: #a5b4fc !important;
   border-color: #a5b4fc !important;
 }
+
+/* admin page, delete button */
+/* views/bookings/index */
+.css-bg {
+  background-color: red;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.css-bg:hover {
+  background-color: #e60000; /* Darker red on hover */
+}
