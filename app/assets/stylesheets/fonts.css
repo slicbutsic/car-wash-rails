@@ -52,6 +52,8 @@
   font-style: normal;
 }
 
+
+/* hero section (view/dashboard/index */
 /* Hide the image on smaller screens */
 .logo-wrapper {
   display: none;
@@ -62,4 +64,20 @@
   .logo-wrapper {
     display: block;
   }
+}
+
+/* flatpickr (view/bookings/form) */
+/* Change the color of the selected day */
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+  background: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+  color: white !important;
+}
+
+/* Change the hover color */
+.flatpickr-day:hover {
+  background: #a5b4fc !important;
+  border-color: #a5b4fc !important;
+
 }
