@@ -16,6 +16,14 @@ user = User.create!(
   password_confirmation: "password"
 )
 
+admin = User.create!(
+  first_name: "Admin",
+  last_name: "User",
+  email: "admin@gmail.com",
+  password: "X7pL9z@kVq!2tB1",
+  password_confirmation: "X7pL9z@kVq!2tB1",
+)
+
 # Create Services
 basic_outside_wash = Service.create!(name: 'Basic Outside Wash', description:'A quick exterior wash of your car’s body, windows, wheels, and tire shine. Perfect for regular upkeep and maintenance, keeping your vehicle looking fresh.', duration: 25)
 basic_inside_out_detailing = Service.create!(name: 'Basic Inside/Out Detailing', description: 'Includes an exterior wash and interior vacuuming, dusting, and wipe-downs. A complete clean for both inside and outside of your vehicle.', duration: 55)

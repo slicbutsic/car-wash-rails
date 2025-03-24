@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @bookings = Booking.all
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -9,8 +13,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @service = Service.find(params[:service_id])
     @vehicle_types = VehicleType.all
-
-
 
     # If a vehicle type is selected, calculate the price
     if params[:booking] && params[:booking][:vehicle_type_id].present?
@@ -35,12 +37,7 @@ class BookingsController < ApplicationController
     end
   end
 
-
-
-
-
   private
-
   def booking_params
     params.require(:booking).permit(:phone, :service_id, :vehicle_type_id, :booking_datetime).merge(user_id: current_user.id)
   end
