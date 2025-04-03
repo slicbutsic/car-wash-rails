@@ -25,10 +25,15 @@ admin = User.create!(
 )
 
 # Create Services
-basic_outside_wash = Service.create!(name: 'Basic Outside Wash', description:'A quick exterior wash of your car’s body, windows, wheels, and tire shine. Perfect for regular upkeep and maintenance, keeping your vehicle looking fresh.', duration: 25)
-basic_inside_out_detailing = Service.create!(name: 'Basic Inside/Out Detailing', description: 'Includes an exterior wash and interior vacuuming, dusting, and wipe-downs. A complete clean for both inside and outside of your vehicle.', duration: 55)
-mega_wash = Service.create!(name: 'Mega Wash', description: 'A deep exterior wash, tire and rim cleaning, plus a thorough wipe-down of all surfaces. The ultimate cleaning experience for a pristine appearance.', duration: 75)
-full_detailing = Service.create!(name: 'Full Detailing', description: 'Complete exterior wash, waxing, interior deep cleaning, and upholstery treatment. A meticulous clean that leaves your car spotless inside and out.', duration: 150)
+super_wash = Service.create!(name: '#1 Super Wash (outside only)', description:'Hand wash, rinse and chamois dry, windows cleaned (outside only).', duration: 25)
+inside_and_out = Service.create!(name: '#2 Inside & Out', description: 'Includes service #1 + interior vacuumed, dashboard and console wiped, windows cleaned inside and outside.', duration: 55)
+mega_works = Service.create!(name: '#3 Mega Works', description: 'Includes service #2 + extra clean on the inside.', duration: 75)
+outside_hand_polish = Service.create!(name: '#4 Outside Hand Polish', description: 'Includes service #1 + hand polish on the outside', duration: 150)
+inside_and_out_hand_polish = Service.create!(name: '#5 Inside & Out + Hand Polish', description: 'Includes service #2 + hand polish on the outside', duration: 150)
+full_detail = Service.create!(name: '#6 Full Detail', description: 'Wash, vacuum, seats and carpets steam cleaned, leather cleaned, windows cleaned', duration: 180)
+leather_cleaning = Service.create!(name: '#7 Leather Cleaning', description: 'Leather cleaned', duration: 120)
+machine_polish_cut_and_polish = Service.create!(name: '#8 Machine Polish Cut & Polish', description: 'Machine polish cut and polish', duration: 120)
+
 
 # Create Vehicle Types
 vehicle_types = [
@@ -41,28 +46,52 @@ vehicle_types = [
 vehicle_types.each { |type| VehicleType.create!(name: type) }
 
 # Create Prices for each service and vehicle type
-# Basic Outside Wash
-Price.create!(service: basic_outside_wash, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 30.00)
-Price.create!(service: basic_outside_wash, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 40.00)
-Price.create!(service: basic_outside_wash, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 45.00)
-Price.create!(service: basic_outside_wash, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 55.00)
+# Super Wash
+Price.create!(service: super_wash, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 30.00)
+Price.create!(service: super_wash, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 35.00)
+Price.create!(service: super_wash, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 40.00)
+Price.create!(service: super_wash, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 45.00)
 
-# Basic Inside/Out Detailing
-Price.create!(service: basic_inside_out_detailing, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 60.00)
-Price.create!(service: basic_inside_out_detailing, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 65.00)
-Price.create!(service: basic_inside_out_detailing, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 70.00)
-Price.create!(service: basic_inside_out_detailing, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 80.00)
+# Inside/Out
+Price.create!(service: inside_and_out, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 60.00)
+Price.create!(service: inside_and_out, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 65.00)
+Price.create!(service: inside_and_out, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 70.00)
+Price.create!(service: inside_and_out, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 75.00)
 
-# Mega Wash
-Price.create!(service: mega_wash, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 100.00)
-Price.create!(service: mega_wash, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 110.00)
-Price.create!(service: mega_wash, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 120.00)
-Price.create!(service: mega_wash, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 139.00)
+# Mega Works
+Price.create!(service: mega_works, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 100.00)
+Price.create!(service: mega_works, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 110.00)
+Price.create!(service: mega_works, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 120.00)
+Price.create!(service: mega_works, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 139.00)
 
-# Full Detailing
-Price.create!(service: full_detailing, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 300.00)
-Price.create!(service: full_detailing, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 350.00)
-Price.create!(service: full_detailing, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 400.00)
-Price.create!(service: full_detailing, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 450.00)
+#  Outside hand polish
+Price.create!(service: outside_hand_polish, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 100.00)
+Price.create!(service: outside_hand_polish, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 110.00)
+Price.create!(service: outside_hand_polish, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 120.00)
+Price.create!(service: outside_hand_polish, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 130.00)
+
+# Inside/Out + Hand Polish
+Price.create!(service: inside_and_out_hand_polish, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 125.00)
+Price.create!(service: inside_and_out_hand_polish, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 145.00)
+Price.create!(service: inside_and_out_hand_polish, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 160.00)
+Price.create!(service: inside_and_out_hand_polish, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 175.00)
+
+# Full Detail
+Price.create!(service: full_detail, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 300.00)
+Price.create!(service: full_detail, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 350.00)
+Price.create!(service: full_detail, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 400.00)
+Price.create!(service: full_detail, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 450.00)
+
+# Leather Cleaning
+Price.create!(service: leather_cleaning, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 220.00)
+Price.create!(service: leather_cleaning, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 240.00)
+Price.create!(service: leather_cleaning, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 260.00)
+Price.create!(service: leather_cleaning, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 260.00)
+
+# Machine Polish Cut & Polish
+Price.create!(service: machine_polish_cut_and_polish, vehicle_type: VehicleType.find_by(name: 'Hatchback & Sedan'), price: 400.00)
+Price.create!(service: machine_polish_cut_and_polish, vehicle_type: VehicleType.find_by(name: 'Wagon & MidSize SUV'), price: 450.00)
+Price.create!(service: machine_polish_cut_and_polish, vehicle_type: VehicleType.find_by(name: 'Large SUV & UTE'), price: 500.00)
+Price.create!(service: machine_polish_cut_and_polish, vehicle_type: VehicleType.find_by(name: 'Extra Large SUV & Van'), price: 550.00)
 
 puts "Seed data created successfully!"
