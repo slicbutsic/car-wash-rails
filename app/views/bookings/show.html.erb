@@ -1,44 +1,47 @@
 <div class="container mt-5 mb-8">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-center text-3xl font-semibold mb-6">Booking Confirmation</h1>
-
+    <h2 class="text-center text-2xl font-medium mb-6">Booking Confirmation</h2>
     <div class="card shadow-lg border border-gray-200 rounded-lg p-6">
       <div class="card-body">
-        <%# <h5 class="card-title text-xl font-medium mb-4">Booking Confirmation</h5> %>
-
         <div class="row mb-4">
-          <div class="col-md-4 font-medium"><strong>Name:</strong></div>
-          <div class="col-md-8"><%= @booking.user.first_name %> <%= @booking.user.last_name %></div>
+          <div class="col-md-4 font-medium">Name:</div>
+          <div class="col-md-8 text-gray-700 text-sm "><%= @booking.user.first_name %> <%= @booking.user.last_name %></div>
         </div>
 
         <div class="row mb-4">
-          <div class="col-md-4 font-medium"><strong>Phone:</strong></div>
-          <div class="col-md-8"><%= @booking.phone %></div>
+          <div class="col-md-4 font-medium">Phone:</div>
+          <div class="col-md-8 text-gray-700 text-sm"><%= @booking.phone %></div>
         </div>
 
         <div class="row mb-4">
-          <div class="col-md-4 font-medium"><strong>Vehicle Type:</strong></div>
-          <div class="col-md-8"><%= @booking.vehicle_type.name %></div>
+          <div class="col-md-4 font-medium">Vehicle Type:</div>
+          <div class="col-md-8 text-gray-700 text-sm "><%= @booking.vehicle_type.name %></div>
         </div>
 
         <div class="row mb-4">
-          <div class="col-md-4 font-medium"><strong>Service:</strong></div>
-          <div class="col-md-8"><%= @booking.service.name %></div>
+          <div class="col-md-4 font-medium">Service:</div>
+          <div class="col-md-8 text-gray-700 text-sm "><%= @booking.service.name %></div>
         </div>
 
         <div class="row mb-4">
-          <div class="col-md-4 font-medium"><strong>Booking Date:</strong></div>
-          <div class="col-md-8"><%= @booking.booking_datetime.strftime("%A, %d %B %Y at %H:%M") %></div>
+          <div class="col-md-4 font-medium">Booking Date:</div>
+          <div class="col-md-8 text-gray-700 text-sm "><%= @booking.booking_datetime.strftime("%A, %d %B %Y at %H:%M") %></div>
         </div>
 
         <div class="row mb-4">
-          <div class="col-md-4 font-medium"><strong>Price:</strong></div>
-          <div class="col-md-8 text-lg font-semibold"><%= number_to_currency(@booking.price.price, precision: 2) %></div>
+          <div class="col-md-4 font-medium">Price:</div>
+          <div class="col-md-8 text-gray-700 text-sm"><%= number_to_currency(@booking.price.price, precision: 2) %></div>
         </div>
 
         <div class="text-center mt-6">
           <%= link_to 'Go back', root_path, class: 'btn bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95' %>
         </div>
+            <!-- Email Confirmation Message -->
+    <div class="mt-6 text-center text-gray-700">
+      <p class="text-md">An email confirmation has been sent to <%= current_user.email %>.
+      <br>
+       If you haven't received it, please get in touch with us at <a href="tel:+61435903054" class="text-indigo-600">0435 903 054</a>.</p>
+    </div>
       </div>
     </div>
   </div>
