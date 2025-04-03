@@ -29,11 +29,10 @@ super_wash = Service.create!(name: '#1 Super Wash (outside only)', description:'
 inside_and_out = Service.create!(name: '#2 Inside & Out', description: 'Includes service #1 + interior vacuumed, dashboard and console wiped, windows cleaned inside and outside.', duration: 55)
 mega_works = Service.create!(name: '#3 Mega Works', description: 'Includes service #2 + extra clean on the inside.', duration: 75)
 outside_hand_polish = Service.create!(name: '#4 Outside Hand Polish', description: 'Includes service #1 + hand polish on the outside', duration: 150)
-inside_and_out_hand_polish = Service.create!(name: '#5 Inside & Out + Hand Polish', description: 'Includes service #2 + hand polish on the outside', duration: 150)
-full_detail = Service.create!(name: '#6 Full Detail', description: 'Wash, vacuum, seats and carpets steam cleaned, leather cleaned, windows cleaned', duration: 180)
-leather_cleaning = Service.create!(name: '#7 Leather Cleaning', description: 'Leather cleaned', duration: 120)
-machine_polish_cut_and_polish = Service.create!(name: '#8 Machine Polish Cut & Polish', description: 'Machine polish cut and polish', duration: 120)
-
+inside_and_out_hand_polish = Service.create!(name: '#5 Inside & Out + Hand Polish', description: 'Includes service #2 + hand polish on the outside.', duration: 150)
+full_detail = Service.create!(name: '#6 Full Detail', description: 'Wash, vacuum, seats and carpets steam cleaned, leather cleaned, windows cleaned.', duration: 180)
+leather_cleaning = Service.create!(name: '#7 Leather Cleaning', description: 'A thorough deep-cleaning service for leather surfaces, removing dirt, and conditioning the material to restore its softness and shine.', duration: 120)
+machine_polish_cut_and_polish = Service.create!(name: '#8 Machine Polish Cut & Polish', description: 'Machine polishing service that removes surface imperfections, swirl marks, and oxidation, restoring your vehicle', duration: 120)
 
 # Create Vehicle Types
 vehicle_types = [
