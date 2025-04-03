@@ -1,16 +1,18 @@
-<div class="py-12 bg-white" style="padding-left: 8rem; padding-right: 8rem;">
+<div class="py-12 bg-white px-4 sm:px-6 md:px-8 lg:px-32">
   <div class="flex items-center justify-between">
-    <div class="text-left pr-8">
+    <div class="ml-5 text-left pr-8">
       <h2 class="text-3xl sm:text-2xl md:text-xl lg:text-lg font-medium leading-7 text-indigo-800 mb-4 poppins-extrabold">
         Limco Car Wash
       </h2>
       <p class="text-lg sm:text-base md:text-sm lg:text-xs text-gray-600 mb-8 poppins-light">
-        Whether you're looking for a quick refresh or a premium detailing experience, <br>
-        we offer a range of services designed to meet the needs of every driver.
+        Whether you're looking for a quick refresh or a premium detailing experience,
+        <span class="noshow"> <br></span>
+        we offer a range <span class="show-small"> <br></span> of services designed to meet <span class="show-small"> <br></span> the needs of every driver.
       </p>
+
+
     </div>
 
-    <%# normal CSS added here for styling %>
     <!-- Logo -->
     <div class="logo-wrapper">
       <%= image_tag "logo.png", alt: "Limco Car Wash Logo", class: "h-10" %>

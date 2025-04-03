@@ -61,7 +61,17 @@
 /* Show the image on large screens (lg) and up */
 @media (min-width: 1024px) {
   .logo-wrapper {
+    margin-right: 200px;
     display: block;
+  }
+  .show-small {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .noshow {
+    display: none;
   }
 }
 
@@ -97,4 +107,3 @@
 .css-bg:hover {
   background-color: #e60000;
 }
-
