@@ -14,10 +14,12 @@ class Service < ApplicationRecord
     if duration.present?
       hours = duration / 60
       minutes = duration % 60
-      if duration >= 60
-        "#{hours}h #{minutes}min"
+      if hours > 0
+        # Show hours and minutes only if minutes are non-zero
+        "#{hours}h #{minutes > 0 ? "#{minutes}min" : ''}"
       else
-        "#{duration} minutes"
+        # If hours are 0, only show minutes
+        "#{minutes} minutes" unless minutes == 0
       end
     end
   end
