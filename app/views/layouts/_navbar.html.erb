@@ -10,15 +10,15 @@
       </div>
       <div class="hidden sm:block sm:ml-6">
         <div class="flex space-x-4">
-          <%= link_to "Services", services_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
-          <%= link_to "Contact", contacts_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
+          <%= link_to "Services", services_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
+          <%= link_to "Contact", contacts_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
           <% if current_user && current_user.email == 'admin@gmail.com' %>
-            <%= link_to 'Bookings', bookings_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
+            <%= link_to 'Bookings', bookings_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
           <% end %>
           <% if user_signed_in? %>
-            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
           <% else %>
-            <%= link_to 'Login', new_user_session_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
+            <%= link_to 'Login', new_user_session_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
           <% end %>
         </div>
       </div>
@@ -40,15 +40,15 @@
   <!-- Mobile menu, toggle classes based on menu state -->
   <div class="sm:hidden hidden" data-navbar-target="menu">
     <div class="px-2 pt-2 pb-3 space-y-1">
-          <%= link_to "Services", services_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
-          <%= link_to "Contact", contacts_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
+          <%= link_to "Services", services_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
+          <%= link_to "Contact", contacts_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
           <% if current_user && current_user.email == 'admin@gmail.com' %>
-            <%= link_to 'Bookings', bookings_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
+            <%= link_to 'Bookings', bookings_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
           <% end %>
           <% if user_signed_in? %>
-            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
           <% else %>
-            <%= link_to 'Login', new_user_session_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-semibold" %>
+            <%= link_to 'Login', new_user_session_path, class: "text-indigo-800 hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular" %>
           <% end %>
     </div>
   </div>
