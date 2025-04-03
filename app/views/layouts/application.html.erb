@@ -21,6 +21,8 @@
     <main>
       <%= yield %>
     </main>
-    <%= render 'layouts/footer' %>
+        <% unless controller.controller_name == 'bookings' && action_name == 'index' %> <!-- Exclude footer on bookings#index -->
+      <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>
