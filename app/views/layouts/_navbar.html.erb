@@ -1,28 +1,32 @@
-<nav class="bg-white sticky top-0 z-50" data-controller="navbar">
+<nav class="bg-white sticky top-0 z-50 shadow-md" data-controller="navbar">
 
   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
       <div class="flex-shrink-0 flex items-center">
         <%= link_to root_path do %>
-          <%= image_tag "logo1.jpg", alt: "Logo", class: "h-14 w-40 rounded-lg" %>
+          <%# <%= image_tag "logo1.jpg", alt: "Logo", class: "h-14 w-40 rounded-lg" %>
+          <%#= image_tag "logo32.png", alt: "Logo", class: "h-14 w-40 rounded-lg" %>
+          <%= image_tag "logonobg.png", alt: "Logo", class: "h-16 w-44 rounded-lg" %>
+
+
         <% end %>
       </div>
       <div class="hidden sm:block sm:ml-6">
         <div class="flex space-x-4">
-          <%= link_to "Services", services_path, class: "hover:bg-gray-100 block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#0D47A1;' %>
-          <%= link_to "Contact", contacts_path, class: " hover:bg-gray-100 block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#0D47A1;' %>
+          <%= link_to "Services", services_path, class: "hover:bg-gray-100 block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#16006C;' %>
+          <%= link_to "Contact", contacts_path, class: " hover:bg-gray-100 block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#16006C;' %>
           <% if current_user && current_user.email == 'admin@gmail.com' %>
-            <%= link_to 'Bookings', bookings_path, class: "hover:bg-gray-100 block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#0D47A1;' %>
+            <%= link_to 'Bookings', bookings_path, class: "hover:bg-gray-100 block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#16006C;' %>
           <% end %>
           <% if user_signed_in? %>
-            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#0D47A1;' %>
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#16006C;' %>
           <% else %>
-            <%= link_to 'Login', new_user_session_path, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#0D47A1;' %>
+            <%= link_to 'Login', new_user_session_path, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style: 'color:#16006C;' %>
           <% end %>
         </div>
       </div>
       <div class="sm:hidden">
-        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-action="click->navbar#toggleMenu" style="color: #0D47A1;">
+        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" data-action="click->navbar#toggleMenu" style="color: #16006C;">
           <!-- Icon when menu is closed -->
           <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" data-navbar-target="openIcon">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -39,15 +43,17 @@
   <!-- Mobile menu, toggle classes based on menu state -->
   <div class="sm:hidden hidden" data-navbar-target="menu">
     <div class="px-2 pt-2 pb-3 space-y-1">
-          <%= link_to "Services", services_path, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #0D47A1;" %>
-          <%= link_to "Contact", contacts_path, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #0D47A1;" %>
+          <%= link_to "Services", services_path, class: "flex justify-center hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #16006C;" %>
+          <%= link_to "Contact", contacts_path, class: "flex justify-center hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #16006C;" %>
           <% if current_user && current_user.email == 'admin@gmail.com' %>
-            <%= link_to 'Bookings', bookings_path, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #0D47A1;" %>
+            <%= link_to 'Bookings', bookings_path, class: "flex justify-center hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #16006C;" %>
           <% end %>
           <% if user_signed_in? %>
-            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #0D47A1;" %>
+          <div class="flex justify-center hover:bg-gray-100">
+              <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #16006C;" %>
+          </div>
           <% else %>
-            <%= link_to 'Login', new_user_session_path, class: "hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #0D47A1;" %>
+            <%= link_to 'Login', new_user_session_path, class: "flex justify-center hover:bg-gray-100  block px-3 py-2 rounded-md text-base poppins-regular", style:"color: #16006C;" %>
           <% end %>
     </div>
   </div>

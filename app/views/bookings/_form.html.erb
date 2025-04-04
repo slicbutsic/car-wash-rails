@@ -36,7 +36,7 @@
 
         <!-- SUV -->
         <div class="flex flex-col items-center p-4">
-          <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Wagon & MidSize SUV").id, id: "vehicle_suv", class: "hidden peer", required: true, onchange: "this.form.submit()" %>
+          <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Wagon & MidSize SUV").id, id: "vehicle_suv", class: "hidden peer", required: true %>
           <label for="vehicle_suv" class="w-50 h-40 flex flex-col items-center justify-center cursor-pointer transition peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500 border border-gray-400 rounded-lg hover:border-indigo-700">
             <!-- Icon on top -->
             <img width="40" height="40" src="https://img.icons8.com/ios/50/suv.png" alt="suv" />
@@ -52,7 +52,7 @@
 
         <!-- Ute -->
         <div class="flex flex-col items-center p-4">
-          <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Large SUV & UTE").id, id: "vehicle_ute", class: "hidden peer", required: true, onchange: "this.form.submit()" %>
+          <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Large SUV & UTE").id, id: "vehicle_ute", class: "hidden peer", required: true %>
           <label for="vehicle_ute" class="w-50 h-40 flex flex-col items-center justify-center cursor-pointer transition peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500 border border-gray-400 rounded-lg hover:border-indigo-700">
             <!-- Icon on top -->
             <img width="40" height="40" src="https://img.icons8.com/ios/50/pickup.png" alt="pickup" class='mb-4' />
@@ -68,7 +68,7 @@
 
         <!-- Van -->
         <div class="flex flex-col items-center p-4">
-          <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Extra Large SUV & Van").id, id: "vehicle_van", class: "hidden peer", required: true, onchange: "this.form.submit()" %>
+          <%= f.radio_button :vehicle_type_id, VehicleType.find_by(name: "Extra Large SUV & Van").id, id: "vehicle_van", class: "hidden peer", required: true %>
           <label for="vehicle_van" class="w-50 h-40 flex flex-col items-center justify-center cursor-pointer transition peer-checked:border-indigo-500 peer-checked:ring-2 peer-checked:ring-indigo-500 border border-gray-400 rounded-lg hover:border-indigo-700">
             <!-- Icon on top -->
             <img width="40" height="40" src="https://img.icons8.com/ios/50/van.png" alt="van" class='mb-1' />

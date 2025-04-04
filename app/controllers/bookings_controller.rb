@@ -44,6 +44,7 @@ class BookingsController < ApplicationController
   end
 
   private
+
   def booking_params
     params.require(:booking).permit(:phone, :service_id, :vehicle_type_id, :booking_datetime).merge(user_id: current_user.id)
   end

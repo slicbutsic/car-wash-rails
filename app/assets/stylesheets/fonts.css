@@ -110,12 +110,11 @@
 
 /* adding css colour for the buttons */
 .button-colour {
-  background-color: #0D47A1;
-
+  background-color: #16006C;
 }
 
 .button-colour:hover {
-  background-color: #1E69A0;
+  background-color: #0D47A1;
 
 }
 
@@ -135,4 +134,3 @@
     margin-left: 0;  /* Remove margin-left */
   }
 }
-
