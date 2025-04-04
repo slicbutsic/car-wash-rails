@@ -10,7 +10,7 @@
           <svg class="w-6 h-6 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
-          <p class="text-lg poppins-medium text-indigo-900">
+          <p class="text-lg poppins-medium ", style= 'color: #0D47A1;'>
             From $<%= number_with_precision(service.cheapest_price || 0, precision: 2) %>
           </p>
         </div>
@@ -28,7 +28,7 @@
 
       <!-- Book Now Button -->
       <div class="text-right">
-        <%= link_to "Book Now", new_booking_path(service_id: service.id), class: "poppins-medium bg-indigo-600 hover:bg-indigo-700 text-white font-light px-4 py-2 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
+        <%= link_to "Book Now", new_booking_path(service_id: service.id), class: "poppins-medium button-colour text-white font-light px-4 py-2 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
       </div>
     </div>
   <% end %>

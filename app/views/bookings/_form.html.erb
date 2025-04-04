@@ -23,7 +23,7 @@
             <!-- Icon on top -->
             <img width="40" height="40" src="https://img.icons8.com/ios/100/sedan.png" alt="sedan" />
             <!-- Text below the icon -->
-            <span class="mt-2 text-center text-sm peer-hover:text-blue-500">
+            <span class="mt-2 text-center text-sm peer-hover:text-blue-800">
               Hatchback or Sedan <br>
               <% @service.name %>
               <% @vehicle_type = VehicleType.find_by(name: "Hatchback & Sedan") %>
@@ -110,7 +110,7 @@
 
     <!-- Submit Button -->
   <div class="mb-6 mt-2">
-  <%= f.submit "Book your Wash", class: "poppins-medium bg-indigo-600 hover:bg-indigo-700 text-white font-light px-4 py-1 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
+  <%= f.submit "Book your Wash", class: "poppins-medium button-colour text-white font-light px-4 py-1 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
   </div>
 
   <% end %>
