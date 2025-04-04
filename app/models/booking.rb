@@ -4,7 +4,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :price
 
-  validates :phone, presence: true
+  validates :phone, format: { with: /\A04[0-9]{2}[- ]?[0-9]{3}[- ]?[0-9]{3}\z/, message: "must be a valid Australian phone number" }, presence: true
   validates :vehicle_type_id, presence: true
   validates :service_id, presence: true
   validates :user_id, presence: true
