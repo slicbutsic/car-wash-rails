@@ -32,6 +32,7 @@ export default class extends Controller {
   }
 
   getMinDate(now) {
-    return now.hour >= 17 ? now.plus({ days: 1 }).startOf("day") : now
+    // Set minimum date to today, but if the current time is after 5 PM, set it to tomorrow
+    return now.startOf('day') // Forces min date to be today
   }
 }

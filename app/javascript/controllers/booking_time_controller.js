@@ -26,7 +26,7 @@ export default class extends Controller {
       .then(response => response.json()) // Parse JSON response
       .then(data => {
         if (data && data.unavailable) {
-          this.updateTimeSlots(data.unavailable);
+          this.updateTimeSlots(data.unavailable, selectedDate);
         }
       })
       .catch(error => {
@@ -35,7 +35,7 @@ export default class extends Controller {
   }
 
   // This function will update the available time slots based on the unavailable ones
-  updateTimeSlots(unavailableTimes) {
+  updateTimeSlots(unavailableTimes, selectedDate) {
     const startHour = 8;
     const endHour = 17; // closing time
     const duration = Duration.fromObject({ minutes: this.durationValue });
@@ -47,13 +47,20 @@ export default class extends Controller {
 
     let lastEndTime = DateTime.fromObject({ hour: startHour, minute: 0 });
 
+    // Get the current time in Brisbane
+    const nowInBrisbane = DateTime.now().setZone("Australia/Brisbane");
+
+    // Check if the selected date is today and disable past slots
+    const selectedDay = DateTime.fromFormat(selectedDate, "dd-MM-yyyy").setZone("Australia/Brisbane");
+    const isToday = selectedDay.hasSame(nowInBrisbane, 'day');
+
     // Go through all the available time slots and hide the ones that are unavailable
     for (let hour = startHour; hour < endHour; hour++) {
       for (let minute of [0, 30]) {
         const time = DateTime.fromObject({ hour, minute });
-        const endTime = time.plus(duration);
 
         // Skip if booking would end after closing
+        const endTime = time.plus(duration);
         if (endTime > closingTime) continue;
 
         const timeStr = time.toFormat("HH:mm");
@@ -77,9 +84,12 @@ export default class extends Controller {
 
         const id = `time_${timeStr.replace(":", "")}`;
 
+        // Check if the time is in the past and disable it
+        const isPastTime = isToday && time < nowInBrisbane;
+
         const slotHTML = `
-          <div class="time-slot ${isUnavailable ? 'unavailable' : ''}">
-            <input type="radio" name="booking[booking_time]" value="${timeStr}" id="${id}" class="time-slot-input" ${isUnavailable ? 'disabled' : ''}>
+          <div class="time-slot ${isUnavailable || isPastTime ? 'unavailable' : ''}">
+            <input type="radio" name="booking[booking_time]" value="${timeStr}" id="${id}" class="time-slot-input" ${isUnavailable || isPastTime ? 'disabled' : ''}>
             <label for="${id}" class="time-slot-label">
               <span class="time-slot-circle"></span>
               <span class="time-slot-text finishes-at">${timeStr}</span>
