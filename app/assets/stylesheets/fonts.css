@@ -134,3 +134,121 @@
     margin-left: 0;  /* Remove margin-left */
   }
 }
+
+
+/* TIMESSSSSSSSẞ */
+/* timessss */
+
+
+#time-slot-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+  padding: 10px;
+}
+
+.time-slot {
+  text-align: center;
+}
+
+.time-slot-input {
+  display: none;
+}
+
+.time-slot-label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  gap: 8px;
+  justify-content: center;
+}
+
+.time-slot-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.time-slot-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.time-slot-label:hover .time-slot-circle {
+  border-color: #5c6bc0;
+  background-color: #f0f4ff;
+}
+
+.time-slot-label:hover .time-slot-text {
+  color: #5c6bc0;
+}
+
+.time-slot-input:disabled + .time-slot-label {
+  opacity: 0.5;
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.time-slot-input:disabled + .time-slot-label .time-slot-circle {
+  border-color: #e0e0e0;
+}
+
+.time-slot-input:checked + .time-slot-label {
+  border-color: #5c6bc0;
+  background-color: #5c6bc0;
+  color: white;
+}
+
+.time-slot-input:checked + .time-slot-label .time-slot-circle {
+  background-color: #5c6bc0;
+  border-color: #5c6bc0;
+}
+
+.time-slot-input:checked + .time-slot-label .time-slot-text {
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  #time-slot-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.time-slot.disabled {
+  pointer-events: none; /* Prevent clicking */
+  color: #ccc; /* Make it look disabled */
+}
+
+.time-slot.disabled .time-slot-label {
+  background-color: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.time-slot-booked {
+  opacity: 0.5;
+  pointer-events: none; /* Prevent user interaction */
+}
+
+.time-slot-input:disabled {
+  background-color: #e5e5e5;
+  cursor: not-allowed;
+}
+
+.time-slot.unavailable {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.time-slot.unavailable input {
+  pointer-events: none;
+}

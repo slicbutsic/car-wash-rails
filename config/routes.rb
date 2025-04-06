@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :contacts, only: [:index]
   resources :about, only: [:index]
 
-  # Resources for bookings
-  resources :bookings
+  resources :bookings do
+    collection do
+      get :unavailable_times
+    end
+  end
+
 end

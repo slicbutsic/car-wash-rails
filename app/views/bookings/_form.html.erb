@@ -12,7 +12,7 @@
         data: { duration: @service.duration }
     %>
 
-    <%= f.hidden_field :service_id, value: @service.id %>
+    <%#= f.hidden_field :service_id, value: @service.id %>
     <div class="mb-4 mt-1">
       <%= f.label :vehicle_type_id, "Select Vehicle", class: "poppins-medium block text-sm font-normal text-gray-700" %>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mb-5">
@@ -85,7 +85,7 @@
       </div>
     </div>
 
-    <!-- Booking Date & time Flatpickr -->
+    <!-- Booking Date Flatpickr -->
     <div class="mb-4">
       <%= f.label :booking_datetime, "Date & Time", class: "poppins-medium block text-sm font-normal text-gray-700 mb-1" %>
       <%= f.text_field :booking_datetime,
@@ -100,6 +100,17 @@
       %>
     </div>
 
+    <!-- Time (Clickable Time Slots) -->
+    <div class="mb-4"
+        data-controller="booking-time"
+        data-booking-time-duration-value="<%= @service.duration %>">
+      <%= f.label :booking_time, "Booking Time", class: "poppins-medium block text-sm font-normal text-gray-700 mb-1" %>
+
+      <div id="time-slot-container" data-booking-time-target="timeSlots" class="hidden">
+        <!-- Stimulus will generate the time slots here -->
+      </div>
+    </div>
+
     <!-- Phone Number -->
     <div class="mb-6">
       <%= f.label :phone, class: "poppins-medium block text-sm font-normal text-gray-700 mb-1" %>
@@ -112,9 +123,9 @@
     </div>
 
     <!-- Submit Button -->
-  <div class="mb-6 mt-2">
-  <%= f.submit "Book your Wash", class: "poppins-medium button-colour text-white font-light px-4 py-1 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
-  </div>
+    <div class="mb-6 mt-2">
+    <%= f.submit "Book your Wash", class: "poppins-medium button-colour text-white font-light px-4 py-1 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
+    </div>
 
   <% end %>
 </div>
