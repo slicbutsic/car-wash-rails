@@ -1,0 +1,43 @@
+<h2 class="text-2xl font-semibold text-center add-mt-please mb-6" style="color: #16006C;">Edit Service</h2>
+
+<%= form_with model: @service, url: service_path(@service), method: :put, class: "space-y-6 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" do |form| %>
+  <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+    <!-- Service Name -->
+    <div class="mb-4">
+      <%= form.label :name, "Service Name", class: "font-semibold text-lg text-gray-700" %>
+      <%= form.text_field :name, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" %>
+    </div>
+
+    <!-- Duration -->
+    <div class="mb-4">
+      <%= form.label :duration, "Duration (In minutes)", class: "font-semibold text-lg text-gray-700" %>
+      <%= form.number_field :duration, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" %>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-4">
+      <%= form.label :description, "Description", class: "font-semibold text-lg text-gray-700" %>
+      <%= form.text_area :description, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" %>
+    </div>
+
+    <h3 class="text-xl font-semibold mt-6 mb-4" style="color: #16006C;">Prices</h3>
+
+    <!-- Prices for each vehicle type -->
+    <% @vehicle_types.each do |vehicle_type| %>
+      <div class="mb-4">
+        <%= label_tag "service_prices_#{vehicle_type.id}", "#{vehicle_type.name} Price", class: "font-semibold text-lg text-gray-700" %>
+        <%= text_field_tag "service[prices][#{vehicle_type.id}]", @service.prices.find_by(vehicle_type: vehicle_type)&.price, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400" %>
+      </div>
+    <% end %>
+
+    <!-- Submit Button -->
+    <div class="text-right">
+      <%= form.submit "Update Service", class: "poppins-medium button-colour text-white font-light px-4 py-2 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
+    </div>
+  </div>
+<% end %>
+
+<!-- Back Link -->
+<div class="text-center mt-6 add-mb-please">
+  <%= link_to 'Back to Services', services_path, class: "poppins-medium button-colour text-white font-light px-4 py-2 rounded-lg cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 active:scale-95" %>
+</div>
