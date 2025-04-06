@@ -9,10 +9,18 @@
     <li class="text-gray-700"><strong class="font-semibold">Service:</strong> <%= @booking.service.name %></li>
     <li class="text-gray-700"><strong class="font-semibold">Vehicle Type:</strong> <%= @booking.vehicle_type.name %></li>
     <li class="text-gray-700"><strong class="font-semibold">Time:</strong> <%= @booking.booking_datetime.strftime('%d/%m/%Y %I:%M %p') %></li>
+    <li class="text-gray-700"><strong class="font-semibold">Duration:</strong> <%= @booking.service.formatted_duration %></li>
+
   </ul>
 
-  <p class="text-gray-700 mt-4">If you have any questions, feel free to contact us.</p>
+  <p class="text-gray-700 mt-4">If you have any questions, feel free to contact us 0435 903 054</p>
+
 
   <p class="text-gray-700 mt-6">Best regards,<br>
   <span class="font-semibold">Limco Carwash</span></p>
+
+  <p class="text-gray-700 mt-4">
+    * All prices are subject to change depending on the condition of the vehicle. <br>
+    * We do not take any responsibility for scratches or marks on vehicles prior to the service. Please note that some scratches may only become visible once the car is cleaned.
+  </p>
 </div>
