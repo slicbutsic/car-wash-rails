@@ -75,21 +75,6 @@
   }
 }
 
-/* flatpickr (view/bookings/form) */
-/* Change the color of the selected day */
-.flatpickr-day.selected,
-.flatpickr-day.selected:hover {
-  background: #0D47A1 !important;
-  border-color: #0D47A1 !important;
-  color: white !important;
-}
-
-/* Change the hover color */
-.flatpickr-day:hover {
-  background: #a5b4fc !important;
-  border-color: #a5b4fc !important;
-}
-
 /* admin page, delete button */
 /* views/bookings/index */
 .css-bg {
@@ -115,30 +100,44 @@
 
 .button-colour:hover {
   background-color: #0D47A1;
-
 }
 
-/* contact page */
-.custom-flex-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;  /* Center by default */
-  width: 100%;
-  height: 100%;
-  margin-left: 400px;  /* Apply margin-left for larger screens */
+/* CSS FOR CAR SELECTION IN FORM */
+.custom-indigo {
+  --custom-indigo-border: #16006C;
+  --custom-indigo-ring: #16006C;
 }
 
-@media (max-width: 1180px) {  /* Apply centering for screens smaller than 1180px */
-  .custom-flex-container {
-    justify-content: center;  /* Center content */
-    margin-left: 0;  /* Remove margin-left */
-  }
+.custom-indigo:checked {
+  border-color: var(--custom-indigo-border);
+  box-shadow: 0 0 0 2px var(--custom-indigo-ring);
 }
 
+.custom-indigo:hover {
+  border-color: var(--custom-indigo-border);
+}
 
-/* TIMESSSSSSSSẞ */
-/* timessss */
+.custom-indigo:checked + label {
+  border-color: var(--custom-indigo-border);
+  box-shadow: 0 0 0 2px var(--custom-indigo-ring);
+}
 
+/* flatpickr (view/bookings/form) */
+/* Change the color of the selected day */
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+  background: #0D47A1 !important;
+  border-color: #0D47A1 !important;
+  color: white !important;
+}
+
+/* Change the hover color */
+.flatpickr-day:hover {
+  background: #a5b4fc !important;
+  border-color: #a5b4fc !important;
+}
+
+/* CSS FOR TIMESLOT SELECTION IN FORM */
 
 #time-slot-container {
   display: grid;
@@ -184,12 +183,12 @@
 }
 
 .time-slot-label:hover .time-slot-circle {
-  border-color: #5c6bc0;
+  border-color: #0D47A1;
   background-color: #f0f4ff;
 }
 
 .time-slot-label:hover .time-slot-text {
-  color: #5c6bc0;
+  color: #0D47A1;
 }
 
 .time-slot-input:disabled + .time-slot-label {
@@ -203,14 +202,14 @@
 }
 
 .time-slot-input:checked + .time-slot-label {
-  border-color: #5c6bc0;
-  background-color: #5c6bc0;
+  border-color: #16006C;
+  /* background-color: #5c6bc0; */
   color: white;
 }
 
 .time-slot-input:checked + .time-slot-label .time-slot-circle {
-  background-color: #5c6bc0;
-  border-color: #5c6bc0;
+  background-color: #16006C;
+  border-color: #16006C;
 }
 
 .time-slot-input:checked + .time-slot-label .time-slot-text {
@@ -251,4 +250,26 @@
 
 .time-slot.unavailable input {
   pointer-events: none;
+}
+
+.finishes-at {
+  font-size: 0.875rem;
+  margin-top: 1px;
+}
+
+/* contact page */
+.custom-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Center by default */
+  width: 100%;
+  height: 100%;
+  margin-left: 400px;  /* Apply margin-left for larger screens */
+}
+
+@media (max-width: 1180px) {  /* Apply centering for screens smaller than 1180px */
+  .custom-flex-container {
+    justify-content: center;  /* Center content */
+    margin-left: 0;  /* Remove margin-left */
+  }
 }

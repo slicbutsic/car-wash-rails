@@ -82,7 +82,7 @@ export default class extends Controller {
             <input type="radio" name="booking[booking_time]" value="${timeStr}" id="${id}" class="time-slot-input" ${isUnavailable ? 'disabled' : ''}>
             <label for="${id}" class="time-slot-label">
               <span class="time-slot-circle"></span>
-              <span class="time-slot-text">${timeStr}</span>
+              <span class="time-slot-text finishes-at">${timeStr}</span>
             </label>
             <!-- Placeholder for "Finishes at" -->
             <div class="finishes-at hidden" id="finishes_at_${id}"></div>
