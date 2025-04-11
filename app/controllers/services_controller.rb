@@ -36,7 +36,7 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
 
     ActiveRecord::Base.transaction do
-      if @service.update(service_params)
+      if @service.update(service_params.except(:prices))  # Update the service without prices
         update_prices(@service)
         redirect_to services_path, notice: 'Service updated successfully.'
       else
@@ -64,9 +64,13 @@ class ServicesController < ApplicationController
   end
 
   def update_prices(service)
-    service.prices.each do |price|
-      new_price = params[:service][:prices][price.vehicle_type.id.to_s]
-      price.update!(price: new_price)
+    # For each price entry in the form
+    service_params[:prices].each do |vehicle_type_id, price_value|
+      # Find or initialize a price record for the specific vehicle_type_id
+      price = service.prices.find_or_initialize_by(vehicle_type_id: vehicle_type_id)
+
+      # Update the price
+      price.update!(price: price_value)
     end
   end
 end
