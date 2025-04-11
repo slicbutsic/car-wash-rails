@@ -11,6 +11,7 @@ class ServicesController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     @service = Service.new(service_params.except(:prices))
     if @service.save
       prices_params = service_params[:prices] || {}
@@ -19,6 +20,13 @@ class ServicesController < ApplicationController
           vehicle_type_id: vehicle_type_id,
           price: price_value
         )
+=======
+    @service = Service.new(service_params)
+    if @service.save
+      # You might want to initialize prices for each vehicle type here
+      VehicleType.all.each do |vt|
+        @service.prices.create(vehicle_type: vt, price: 0.0)
+>>>>>>> 2ff8c4abfa74ec5970a3162138b9df6645bb38d4
       end
       redirect_to services_path, notice: 'Service created successfully.'
     else
