@@ -79,3 +79,6 @@ gem 'flatpickr'
 gem 'dotenv-rails'
 
 gem "mapkick-rb"
+
+gem 'nokogiri', '~> 1.11'
+
