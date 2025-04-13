@@ -316,7 +316,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mapkick-rb
-  nokogiri (~> 1.11)
+  nokogiri (>= 1.14)
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
   selenium-webdriver
