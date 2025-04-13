@@ -11,14 +11,17 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2025_03_20_074047) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bookings", force: :cascade do |t|
     t.string "phone"
-    t.integer "service_id", null: false
-    t.integer "vehicle_type_id", null: false
-    t.integer "user_id", null: false
+    t.bigint "service_id", null: false
+    t.bigint "vehicle_type_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_id", null: false
+    t.bigint "price_id", null: false
     t.datetime "booking_datetime"
     t.index ["price_id"], name: "index_bookings_on_price_id"
     t.index ["service_id"], name: "index_bookings_on_service_id"
@@ -28,8 +31,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_20_074047) do
 
   create_table "prices", force: :cascade do |t|
     t.decimal "price"
-    t.integer "service_id", null: false
-    t.integer "vehicle_type_id", null: false
+    t.bigint "service_id", null: false
+    t.bigint "vehicle_type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["service_id"], name: "index_prices_on_service_id"
