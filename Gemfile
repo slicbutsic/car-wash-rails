@@ -70,9 +70,11 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "tailwindcss-ruby", "~> 4.0"
+# gem "tailwindcss-ruby", "~> 4.0"
 
-gem "tailwindcss-rails", "~> 4.2"
+# gem "tailwindcss-rails", "~> 4.0"
+
+gem 'tailwindcss-rails', group: :production
 
 gem 'devise'
 
@@ -82,4 +84,4 @@ gem 'dotenv-rails'
 
 gem "mapkick-rb"
 
-gem 'nokogiri', '1.14.0'
+# gem 'nokogiri', '1.14.0'
