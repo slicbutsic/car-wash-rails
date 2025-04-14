@@ -61,7 +61,7 @@
 /* Show the image on large screens (lg) and up */
 @media (min-width: 1024px) {
   .logo-wrapper {
-    margin-right: 200px;
+    margin-right: 180px;
     display: block;
   }
   .show-small {
