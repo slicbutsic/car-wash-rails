@@ -74,7 +74,7 @@ end
 
 # gem "tailwindcss-rails", "~> 4.0"
 
-gem 'tailwindcss-rails', group: :production
+# gem 'tailwindcss-rails', group: :production
 
 gem 'devise'
 
