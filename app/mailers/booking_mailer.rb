@@ -1,5 +1,6 @@
 class BookingMailer < ApplicationMailer
-  default from: 'siviglialucas@gmail.com'
+  # default from: 'siviglialucas@gmail.com'
+  default from: Rails.env.production? ? 'no-reply@limcocarwashevertonpark.com.au' : 'limco.booking@gmail.com'
 
   # Email to the user for booking confirmation
   def booking_confirmation(booking)
@@ -14,7 +15,8 @@ class BookingMailer < ApplicationMailer
   def admin_notification(booking)
     @booking = booking
     mail(
-      to: 'siviglialucas@gmail.com', # Admin's email address
+      # to: 'siviglialucas@gmail.com', # Admin's email address
+      to: 'limco.booking@gmail.com', # Admin's email address
       subject: "Booking confirmation - #{@booking.service.name}"
     )
   end

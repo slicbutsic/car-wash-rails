@@ -85,3 +85,5 @@ gem 'dotenv-rails'
 gem "mapkick-rb"
 
 # gem 'nokogiri', '1.14.0'
+
+gem 'mailgun-ruby', '~>1.2'
