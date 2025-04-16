@@ -1,13 +1,12 @@
 # Limco Car Wash
 
-
-### Booking Screen
+### Booking Page
 <img src="app/assets/images/booking-screen.png" width="600" />
 
-### Booking confirmation
+### Booking Confirmation
 <img src="app/assets/images/booking-conf.png" width="600" />
 
-### Booking confirmation
+### Booking Confirmation
 <img src="app/assets/images/booking-conf1.png" width="600" />
 
 ### Edit Prices Admin Page
@@ -15,7 +14,6 @@
 
 ### Edit Prices Admin Page
 <img src="app/assets/images/edit-prices-admin2.png" width="600" />
-
 
 **Freelance work** to develop a website for Limco Car Wash, featuring an integrated booking system for their services and enhancing their online presence.
 
