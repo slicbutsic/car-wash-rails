@@ -17,6 +17,7 @@ class BookingMailer < ApplicationMailer
     mail(
       # to: 'siviglialucas@gmail.com', # Admin's email address
       to: 'limco.booking@gmail.com', # Admin's email address
+      from: 'limco.booking@gmail.com', # Change the 'From' address for the admin email
       subject: "Booking confirmation - #{@booking.service.name}"
     )
   end
