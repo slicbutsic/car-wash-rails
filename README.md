@@ -3,18 +3,20 @@
 ### Booking Page
 <img src="app/assets/images/booking-screen.png" width="700" />
 
-
-### Booking Confirmation
+### Booking email confirmation sent to user
 <img src="app/assets/images/booking-conf.png" width="700" />
 
-### Booking Confirmation
+### Booking email confirmation sent to admin
 <img src="app/assets/images/booking-conf1.png" width="700" />
 
-### Edit Prices Admin Page
+### Edit services and prices (Admin page)
 <img src="app/assets/images/edit-prices-admin.png" width="700" />
 
-### Edit Prices Admin Page
+### Edit services and prices (Admin page)
 <img src="app/assets/images/edit-prices-admin2.png" width="700" />
+
+### Handle bookigs (Admin page)
+<img src="app/assets/images/handle-booking-admin.png" width="700" />
 
 **Freelance work** to develop a website for Limco Car Wash, featuring an integrated booking system for their services and enhancing their online presence.
 
