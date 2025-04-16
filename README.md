@@ -1,5 +1,22 @@
 # Limco Car Wash
 
+
+### Booking Screen
+<img src="app/assets/images/booking-screen.png" width="600" />
+
+### Booking confirmation
+<img src="app/assets/images/booking-conf.png" width="600" />
+
+### Booking confirmation
+<img src="app/assets/images/booking-conf1.png" width="600" />
+
+### Edit Prices Admin Page
+<img src="app/assets/images/edit-prices-admin.png" width="600" />
+
+### Edit Prices Admin Page
+<img src="app/assets/images/edit-prices-admin2.png" width="600" />
+
+
 **Freelance work** to develop a website for Limco Car Wash, featuring an integrated booking system for their services and enhancing their online presence.
 
 Through this project, I was able to:
@@ -26,50 +43,15 @@ Through this project, I was able to:
 - **JavaScript**: For interactive elements on the website.
 - **Ruby on Rails**: Backend framework used to handle the business logic and dynamic content, including the booking system.
 - **Heroku**: For hosting and deploying the application.
+- **MailGun**: For sending email confirmation.
 
-## Getting Started
 
-### Prerequisites
-
-To run the project locally, make sure you have the following installed:
-
-- Ruby (version 3.0+)
-- Ruby on Rails (version 6.0+)
-- PostgreSQL (for database management)
-- Node.js and npm (for managing frontend dependencies)
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/slicbutsic/limco-car-wash.git
-  ```
-2. **Install dependencies**:
-    ```bash
-    bundle install
-    npm install
-    ```
-3. **Setup Database**:
-    ```bash
-      rails db:create db:migrate db:seed
-    ```
-5. **Add Tailwind**:
-    ```
-    ./bin/bundle add tailwindcss-ruby
-    ./bin/bundle add tailwindcss-rails
-    ./bin/rails tailwindcss:install
-    ```
-
-6. **Start Server**:
-  ``` ./bin/dev
-  ```
-
-7. **Visit website**
-http://localhost:3000
+**Visit website**
+http://limcocarwashevertonpark.com.au
 
 
 ## Contact
 
 For inquiries or collaboration opportunities, you can reach me at:
 - Email: [siviglialucas@gmail.com]
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/siviglialucas)
+- LinkedIn: (https://www.linkedin.com/in/siviglialucas)
